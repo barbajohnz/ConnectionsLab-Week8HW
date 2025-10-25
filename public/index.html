@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Color Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
+        }
+        
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .red { background-color: #e74c3c; }
+        .blue { background-color: #3498db; }
+        .green { background-color: #2ecc71; }
+        .purple { background-color: #9b59b6; }
+        .orange { background-color: #e67e22; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Color Changer</h1>
+    <p style="color: white; font-size: 18px;">Click a button - all tabs change color!</p>
+    
+    <div class="button-container">
+        <button class="red" onclick="changeColor('#e74c3c')">Red</button>
+        <button class="blue" onclick="changeColor('#3498db')">Blue</button>
+        <button class="green" onclick="changeColor('#2ecc71')">Green</button>
+        <button class="purple" onclick="changeColor('#9b59b6')">Purple</button>
+        <button class="orange" onclick="changeColor('#e67e22')">Orange</button>
+    </div>
+
+    <!-- Socket.io client library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
